@@ -447,7 +447,7 @@ let g:syntastic_loc_list_height=3  "Sets the height of the error list
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "}}\""]
 " Use JSHint instead of JSLint
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_jshint_conf = '~/.jshintrc'
+let g:syntastic_javascript_jshint_args = '--config ~/.jshintrc'
 
 " }}}
 " GUNDO - Visualize undo tree with Gundo (F5)  ---------------------------- {{{
