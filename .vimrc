@@ -5,7 +5,7 @@
 "   * Screen position and size autosave
 "
 " Maintainer:    Thomas Lee
-" Modified:      2014 Aug 24
+" Modified:      2014 Nov 4
 " Requires:      Unix for compiling, everything else should work on Windows
 "                Pathogen  - plugin management
 "                Gundo     - undo tree
@@ -120,9 +120,9 @@ set guioptions-=m  "Removes GUI tabs, uses flat tabs instead
 "}}}
 " Fold sections ----------------------------------------------------------- {{{
 au FileType vim setlocal foldmethod=marker
-set foldlevelstart=0   "Set initial depth of folded lines, zero == start folded
+"set foldlevelstart=0   "Set initial depth of folded lines, zero == start folded
 set foldmethod=syntax  "Use syntax files to determing which blocks to fold
-au FileType html,xml setlocal foldmethod=indent  " Use indents for tag based files
+"au FileType html,xml setlocal foldmethod=indent  " Use indents for tag based files
 " Line folding utilities - stevelosh.com ---------------------------------- {{{
 
 " Space to toggle folds.
@@ -447,7 +447,7 @@ let g:syntastic_loc_list_height=3  "Sets the height of the error list
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "}}\""]
 " Use JSHint instead of JSLint
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_jshint_args = '--config ~/.jshintrc'
+"let g:syntastic_javascript_jshint_args = '--config ~/.jshintrc'
 
 " }}}
 " GUNDO - Visualize undo tree with Gundo (F5)  ---------------------------- {{{
