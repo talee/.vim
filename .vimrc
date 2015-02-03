@@ -5,7 +5,7 @@
 "   * Screen position and size autosave
 "
 " Maintainer:    Thomas Lee
-" Modified:      2014 Nov 4
+" Modified:      2015 Feb 2
 " Requires:      Unix for compiling, everything else should work on Windows
 "                Pathogen  - plugin management
 "                Gundo     - undo tree
@@ -448,6 +448,7 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "}}\""]
 " Use JSHint instead of JSLint
 let g:syntastic_javascript_checkers = ['jshint']
 "let g:syntastic_javascript_jshint_args = '--config ~/.jshintrc'
+autocmd BufNewFile,BufRead *.hbs let g:syntastic_html_tidy_ignore_errors=["missing </form>", "inserting implicit <form>", "<input> isn't allowed in <body> elements"]
 
 " }}}
 " GUNDO - Visualize undo tree with Gundo (F5)  ---------------------------- {{{
