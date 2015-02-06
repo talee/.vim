@@ -248,6 +248,9 @@ command! Spellon  setlocal spell spelllang=en_us
 command! Spelloff setlocal nospell
 "}}}
 
+" JS: Surround with braces above and below
+au FileType js nnoremap <F2> C{"}%I
+
 "<F2> hotkey to run the current Go file ----------------------------------- {{{
 au FileType go nnoremap <F2> :w<CR> :!echo "==== BUILD & RUN ====" && go run %<CR>
 " }}}
