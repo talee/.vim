@@ -5,7 +5,7 @@
 "   * Screen position and size autosave
 "
 " Maintainer:    Thomas Lee
-" Modified:      2015 Feb 2
+" Modified:      2015 May 7
 " Requires:      Unix for compiling, everything else should work on Windows
 "                Pathogen  - plugin management
 "                Gundo     - undo tree
@@ -74,6 +74,7 @@ set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
 au FileType html,htm,css,javascript,coffee,php,xhtml setlocal ts=4 sw=4 expandtab nofen
 au BufRead,BufNewFile .jshintrc,.bowerrc,*.json set ft=javascript
 au BufRead,BufNewFile .vimrc set ft=vim
+au FileType markdown setlocal tw=80
 au FileType gitcommit setlocal nofen
 
 "}}}
@@ -249,7 +250,7 @@ command! Spelloff setlocal nospell
 "}}}
 
 " JS: Surround with braces above and below
-au FileType js nnoremap <F2> C{"}%I
+au FileType javascript nnoremap <F2> C{"}%I
 
 "<F2> hotkey to run the current Go file ----------------------------------- {{{
 au FileType go nnoremap <F2> :w<CR> :!echo "==== BUILD & RUN ====" && go run %<CR>
