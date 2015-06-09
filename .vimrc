@@ -71,8 +71,7 @@ set wrap          "Turns on word wrapping at the end of the window
 set tabstop=4     "Tabs take up 4 spaces on the screen
 set shiftwidth=4  "Number of spaces for indents such as >>, <<
 set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
-au FileType html,htm,css,javascript,coffee,php,xhtml setlocal ts=2 sw=2 expandtab nofen
-au BufRead,BufNewFile .jshintrc,.bowerrc,*.json set ft=javascript
+au FileType html,htm,css,javascript,coffee,php,xhtml setlocal ts=2 sw=2 tw=80 expandtab nofen
 au BufRead,BufNewFile .vimrc set ft=vim
 au FileType markdown setlocal tw=80
 au FileType gitcommit setlocal nofen
@@ -448,7 +447,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=3  "Sets the height of the error list
 " Ignore ng-* errors
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "}}\"", " proprietary attribute \"unresolved", " proprietary attribute \"fullbleed"]
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "}}\"", " proprietary attribute \"unresolved", " proprietary attribute \"fullbleed", " proprietary attribute \"layout", " proprietary attribute \"vertical", " proprietary attribute \"horizontal", " proprietary attribute \"end", " is not recognized", "discarding unexpected <core-"]
 " Use JSHint instead of JSLint
 let g:syntastic_javascript_checkers = ['jshint']
 "let g:syntastic_javascript_jshint_args = '--config ~/.jshintrc'
