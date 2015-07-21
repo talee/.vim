@@ -5,7 +5,7 @@
 "   * Screen position and size autosave
 "
 " Maintainer:    Thomas Lee
-" Modified:      2015 May 7
+" Modified:      2015 July 21
 " Requires:      Unix for compiling, everything else should work on Windows
 "                Pathogen  - plugin management
 "                Gundo     - undo tree
@@ -72,7 +72,7 @@ set tabstop=4     "Tabs take up 4 spaces on the screen
 set shiftwidth=4  "Number of spaces for indents such as >>, <<
 set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
 au FileType html,htm,css,javascript,coffee,php,xhtml setlocal ts=2 sw=2 tw=80 expandtab nofen
-au BufRead,BufNewFile .jshintrc,.bowerrc,*.json set ft=json
+au BufRead,BufNewFile .jshintrc,.bowerrc,*.json set ft=json nofen
 au BufRead,BufNewFile .vimrc set ft=vim
 au FileType markdown setlocal tw=80
 au FileType gitcommit setlocal nofen
@@ -85,7 +85,7 @@ set comments+=n:*,n:#
 " Prevents comment insertion after first line for certain file types ------ {{{
 "            // Comment
 "            int a;      <- This line won't have "// " auto-inserted
-au FileType c,cpp,java setlocal comments-=:// comments+=f://
+au FileType c,cpp,java setlocal comments-=:// comments+=f:// nofen
 
 "}}}
 " Text wrapping marker symbols -------------------------------------------- {{{
