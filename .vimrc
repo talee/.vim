@@ -5,7 +5,7 @@
 "   * Screen position and size autosave
 "
 " Maintainer:    Thomas Lee
-" Modified:      2015 July 21
+" Modified: 	 2015 Sep 8
 " Requires:      Unix for compiling, everything else should work on Windows
 "                Pathogen  - plugin management
 "                Gundo     - undo tree
@@ -448,7 +448,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=3  "Sets the height of the error list
 " Ignore ng-* errors
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "}}\"", " proprietary attribute \"unresolved", " proprietary attribute \"fullbleed", " proprietary attribute \"layout", " proprietary attribute \"vertical", " proprietary attribute \"horizontal", " proprietary attribute \"end", " is not recognized", "discarding unexpected <core-"]
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "}}\"", " proprietary attribute \"unresolved", " proprietary attribute \"fullbleed", " proprietary attribute \"layout", " proprietary attribute \"vertical", " proprietary attribute \"horizontal", " proprietary attribute \"end", " is not recognized", "discarding unexpected <core-", "discarding unexpected <paper-", "discarding unexpected <iron-", "discarding unexpected </core-", "discarding unexpected </paper-", "discarding unexpected </iron-", "discarding unexpected <template", "discarding unexpected </template", "discarding unexpected <dom-", "discarding unexpected </dom-"]
 " Use JSHint instead of JSLint
 let g:syntastic_javascript_checkers = ['jshint']
 "let g:syntastic_javascript_jshint_args = '--config ~/.jshintrc'
