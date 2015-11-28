@@ -71,7 +71,7 @@ set wrap          "Turns on word wrapping at the end of the window
 set tabstop=4     "Tabs take up 4 spaces on the screen
 set shiftwidth=4  "Number of spaces for indents such as >>, <<
 set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
-au FileType html,htm,css,javascript,coffee,php,xhtml setlocal ts=2 sw=2 tw=80 expandtab nofen
+au FileType html,htm,css,javascript,coffee,php,xhtml setlocal ts=2 sw=2 tw=80 expandtab nofen | vertical resize 80
 au BufRead,BufNewFile .jshintrc,.bowerrc,*.json set ft=json nofen
 au BufRead,BufNewFile .vimrc set ft=vim
 au FileType markdown setlocal tw=80
@@ -707,6 +707,13 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+" }}}
+" Resize all buffers to 80 given number of columns (vsplit windows) -------- {{{
+" NOTE: Won't exceed device screen width
+command -nargs=1 ResizeCols call ResizeCols(<f-args>)
+function! ResizeCols(numCols)
+	let &columns=a:numCols * 80
+endfunction
 " }}}
 " }}}
 " vim:set foldmethod=marker:set foldlevelstart=0:
