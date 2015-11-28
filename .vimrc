@@ -5,7 +5,7 @@
 "   * Screen position and size autosave
 "
 " Maintainer:    Thomas Lee
-" Modified: 	 2015 Sep 8
+" Modified: 	 2015 Nov 28
 " Requires:      Unix for compiling, everything else should work on Windows
 "                Pathogen  - plugin management
 "                Gundo     - undo tree
@@ -712,7 +712,13 @@ endif
 " NOTE: Won't exceed device screen width
 command -nargs=1 ResizeCols call ResizeCols(<f-args>)
 function! ResizeCols(numCols)
-	let &columns=a:numCols * 80
+	let &columns=a:numCols * 81 - 1
+endfunction
+" }}}
+" Resize height of window to number of lines in the file ------------------- {{{
+command MaxHeight call MaxHeight()
+function! MaxHeight()
+	execute "resize " . line('$')
 endfunction
 " }}}
 " }}}
