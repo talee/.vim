@@ -71,9 +71,10 @@ set wrap          "Turns on word wrapping at the end of the window
 set tabstop=4     "Tabs take up 4 spaces on the screen
 set shiftwidth=4  "Number of spaces for indents such as >>, <<
 set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
-au FileType html,htm,css,javascript,coffee,php,xhtml setlocal ts=2 sw=2 tw=80 expandtab nofen fdm=expr | vertical resize 80
+au FileType html,htm,css,javascript,json,coffee,php,xhtml setlocal ts=2 sw=2 tw=80 expandtab nofen fdm=expr | vertical resize 80
 au BufRead,BufNewFile .jshintrc,.bowerrc,*.json set ft=json nofen
 au BufRead,BufNewFile .vimrc set ft=vim
+au BufRead,BufNewFile .tag set ft=jsx
 au FileType markdown setlocal tw=80
 au FileType gitcommit setlocal nofen
 
