@@ -245,6 +245,9 @@ command! CDC lcd %:p:h
 "close other folds)
 au FileType vim cnoreabbrev w w<bar>normal zx
 
+"Save with Ctrl-Space
+inoremap <NUL> <Esc>:update<CR>
+
 "Spellon/off toggles spelling check --------------------------------------- {{{
 command! Spellon  setlocal spell spelllang=en_us
 command! Spelloff setlocal nospell
