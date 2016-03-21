@@ -72,9 +72,9 @@ set tabstop=4     "Tabs take up 4 spaces on the screen
 set shiftwidth=4  "Number of spaces for indents such as >>, <<
 set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
 au FileType html,htm,css,javascript,json,coffee,php,xhtml setlocal ts=2 sw=2 tw=80 expandtab nofen fdm=expr | vertical resize 80
-au BufRead,BufNewFile .jshintrc,.bowerrc,*.json set ft=json nofen
+au BufRead,BufNewFile .*rc,*.json set ft=json nofen
 au BufRead,BufNewFile .vimrc set ft=vim
-au BufRead,BufNewFile .tag set ft=jsx
+au BufRead,BufNewFile *.tag setlocal ft=jsx omnifunc=htmlcomplete#CompleteTags ts=2 sw=2 tw=80 expandtab nofen fdm=expr | vertical resize 80
 au FileType markdown setlocal tw=80
 au FileType gitcommit setlocal nofen
 
@@ -247,6 +247,7 @@ au FileType vim cnoreabbrev w w<bar>normal zx
 
 "Save with Ctrl-Space
 inoremap <NUL> <Esc>:update<CR>
+noremap <NUL> <Esc>:update<CR>
 
 "Spellon/off toggles spelling check --------------------------------------- {{{
 command! Spellon  setlocal spell spelllang=en_us
@@ -672,6 +673,15 @@ function! s:CopyMatches(line1, line2, reg)
   endif
 endfunction
 " }}}
+" Format Chrome cURL ------------------------------------------------------ {{{
+function! FormatCurlFile()
+	%s/"/\\"/g
+	%s/^curl '/url "/
+	%s/ -H '/\r-H "/g
+	%s/'$/"/g
+	%s/\v' --([a-z-]{2,})/"\r--\1/g
+	%s/\v^(--[a-z-]{2,}) '/\1 "/g
+endfunction "}}}
 " Format XML -------------------------------------------------------------- {{{
 function! FormatXml()
 	set syntax=xml
