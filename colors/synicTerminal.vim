@@ -94,7 +94,8 @@ hi Constant gui=NONE guifg=MistyRose3 guibg=bg cterm=NONE ctermfg=181 ctermbg=bg
 hi String gui=NONE guifg=LightBlue3 guibg=bg cterm=NONE ctermfg=110 ctermbg=bg
 hi Special gui=NONE guifg=GoldenRod guibg=bg cterm=NONE ctermfg=178 ctermbg=bg
 hi Statement gui=NONE guifg=khaki guibg=bg cterm=NONE ctermfg=222 ctermbg=bg
-hi Operator gui=NONE guifg=#8673e8 guibg=bg cterm=NONE ctermfg=98 ctermbg=bg
+" Hard to read += typeof operators originally ctermfg 98
+hi Operator gui=NONE guifg=#8673e8 guibg=bg cterm=NONE ctermfg=105 ctermbg=bg
 hi Ignore gui=NONE guifg=bg guibg=bg cterm=NONE ctermfg=bg ctermbg=bg
 hi ToDo gui=NONE guifg=DodgerBlue guibg=bg cterm=NONE ctermfg=33 ctermbg=bg
 hi Error gui=NONE guifg=Red guibg=Linen cterm=NONE ctermfg=196 ctermbg=15
