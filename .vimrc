@@ -44,6 +44,7 @@ endif
 " Allows bash aliases by specifying config with bash interactive mode ------ {{{
 if has("unix")
     set shellcmdflag+=i
+    set shell=/bin/bash\ --rcfile\ ~/.bash_profile
 endif " }}}
 " Backups - Disable persistent swap files ---------------------------------- {{{
 set nobackup     "Don't keep persistent backup (prevent filename~ clutter)
@@ -734,6 +735,11 @@ endfunction
 command MaxHeight call MaxHeight()
 function! MaxHeight()
 	execute "resize " . line('$')
+endfunction
+" }}}
+" Set 4 spaces for window -------------------------------------------------- {{{
+function! FourSpaces()
+  set ts=4 sw=4
 endfunction
 " }}}
 " }}}
