@@ -457,8 +457,9 @@ let g:syntastic_loc_list_height=3  "Sets the height of the error list
 " Ignore ng-* errors
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "}}\"", " proprietary attribute \"unresolved", " proprietary attribute \"fullbleed", " proprietary attribute \"layout", " proprietary attribute \"vertical", " proprietary attribute \"horizontal", " proprietary attribute \"end", " is not recognized", "discarding unexpected <core-", "discarding unexpected <paper-", "discarding unexpected <iron-", "discarding unexpected </core-", "discarding unexpected </paper-", "discarding unexpected </iron-", "discarding unexpected <template", "discarding unexpected </template", "discarding unexpected <dom-", "discarding unexpected </dom-"]
 " Use JSHint instead of JSLint
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_eslint_args = '--no-eslintrc -c ~/.eslintrc'
+" let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_eslint_args = '--no-eslintrc -c ~/.eslintrc'
 "let g:syntastic_javascript_jshint_args = '--config ~/.jshintrc'
 autocmd BufNewFile,BufRead *.hbs let g:syntastic_html_tidy_ignore_errors=["missing </form>", "inserting implicit <form>", "<input> isn't allowed in <body> elements"]
 
