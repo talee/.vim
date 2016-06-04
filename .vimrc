@@ -35,6 +35,7 @@ set backspace=indent,eol,start
 set runtimepath+=~/.vim  "Set path for custom user plugins, colors, syntax etc.
 filetype plugin on
 set modelines=5  " Default number of modelines
+set switchbuf=useopen " Jump to open buffer window instead of splitting on :sb
 
 " In many terminal emulators the mouse works just fine, thus enable it. --- {{{
 if has('mouse')
