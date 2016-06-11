@@ -461,6 +461,8 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "}}\"",
 " Use JSHint instead of JSLint
 " let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_javascript_checkers = ['eslint']
+" Don't check on wq
+let g:syntastic_check_on_wq = 0
 " let g:syntastic_javascript_eslint_args = '--no-eslintrc -c ~/.eslintrc'
 "let g:syntastic_javascript_jshint_args = '--config ~/.jshintrc'
 autocmd BufNewFile,BufRead *.hbs let g:syntastic_html_tidy_ignore_errors=["missing </form>", "inserting implicit <form>", "<input> isn't allowed in <body> elements"]
