@@ -260,7 +260,7 @@ command! Spelloff setlocal nospell
 
 " JS: Surround with braces above and below
 au FileType javascript nnoremap <F2> C{"}%I
-au FileType javascript nnoremap <F3> :!babel-node %<CR>
+au FileType javascript nnoremap <F3> :up <bar> :!babel-node %<CR>
 
 "<F2> hotkey to run the current Go file ----------------------------------- {{{
 au FileType go nnoremap <F2> :w<CR> :!echo "==== BUILD & RUN ====" && go run %<CR>
