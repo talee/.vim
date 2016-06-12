@@ -263,7 +263,8 @@ au FileType javascript nnoremap <F3> C{"}%I
 au FileType javascript nnoremap <F2> :up <bar> :call RunJS()<CR>
 function! RunJS()
   set shellcmdflag-=i
-  :!babel-node %
+  execute "!babel-node %"
+  redraw
   set shellcmdflag+=i
 endfunction
 
