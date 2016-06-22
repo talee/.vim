@@ -50,7 +50,7 @@ endif " }}}
 " Backups - Disable persistent swap files ---------------------------------- {{{
 set nobackup     "Don't keep persistent backup (prevent filename~ clutter)
 set writebackup  "Only create/write backup when editing the file
-set directory=~/tmp,/var/tmp,/tmp "Set director(ies) for temp/swap files }}}
+"set directory=~/tmp,/var/tmp,/tmp "Set director(ies) for temp/swap files }}}
 
 "}}}
 " TEXT_FORMATTING_OPTIONS ------------------------------------------------- {{{
