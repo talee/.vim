@@ -482,7 +482,9 @@ nnoremap <F5> :GundoToggle<CR>
 " }}}
 " PATHOGEN - cleaner plugin management - plugins in their own folder  ----- {{{
 call pathogen#infect()  "http://www.vim.org/scripts/script.php?script_id=2332
-
+" }}}
+" MUSTACHE HANDLEBARS - syntax highlighting and abbrev -------------------- {{{
+let g:mustache_abbreviations = 1
 " }}}
 " GO plugins -------------------------------------------------------------- {{{
 set rtp+=$GOROOT/misc/vim
