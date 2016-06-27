@@ -492,6 +492,7 @@ filetype plugin indent on
 syntax on
 " }}}
 " JavaImp ----------------------------------------------------------------- {{{
+" TODO: https://github.com/rustushki/JavaImp.vim#importing-your-jdk-classes
 let g:JavaImpPaths = $HOME . "/.vim/bundle/java-imp/jmplst"
 let g:JavaImpDataDir = $HOME. "/.vim/bundle/java-imp"
 " }}}

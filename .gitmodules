@@ -52,3 +52,15 @@
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = git@github.com/:Lokaltog/vim-powerline
+[submodule "bundle/gundo.vim"]
+	path = bundle/gundo.vim
+	url = git@github.com:sjl/gundo.vim.git
+[submodule "bundle/JavaImp.vim"]
+	path = bundle/JavaImp.vim
+	url = git@github.com:rustushki/JavaImp.vim.git
+[submodule "bundle/rename.vim"]
+	path = bundle/rename.vim
+	url = git@github.com:danro/rename.vim.git
+[submodule "bundle/Tabmerge"]
+	path = bundle/Tabmerge
+	url = git@github.com:vim-scripts/Tabmerge.git
