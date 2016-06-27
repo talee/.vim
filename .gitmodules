@@ -52,6 +52,7 @@
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = git@github.com:Lokaltog/vim-powerline
+	branch = develop
 [submodule "bundle/gundo.vim"]
 	path = bundle/gundo.vim
 	url = git@github.com:sjl/gundo.vim.git
