@@ -452,6 +452,12 @@ else
 endif
 
 " }}}
+" POWERLINE --------------------------------------------------------------- {{{
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+" }}}
 " SYNTASTIC - Realtime syntax checking  ----------------------------------- {{{
 "Add line # and number of errors in status line for Syntastic plugin
 set statusline+=%#warningmsg#
