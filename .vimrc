@@ -255,7 +255,7 @@ au FileType vim cnoreabbrev w w<bar>normal zx
 
 
 "Abbreviate finding files containing a given string
-cabbrev ffc new<bar>r!ffc 
+cnoreabbrev ffc new<bar>r!ffc
 
 "Save with Ctrl-Space
 inoremap <NUL> <Esc>:update<CR>
