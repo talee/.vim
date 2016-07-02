@@ -511,6 +511,9 @@ let g:mustache_abbreviations = 1
 let g:JavaImpPaths = $HOME . "/.vim/bundle/java-imp/jmplst"
 let g:JavaImpDataDir = $HOME. "/.vim/bundle/java-imp"
 " }}}
+" EMMET-VIM --------------------------------------------------------------- {{{
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+"}}}
 " MISC - list/URLs of plugins - some are not called directly by this vimrc  {{{
 "-------------------------------------------------------------------------------
 
