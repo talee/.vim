@@ -5,7 +5,6 @@
 "   * Screen position and size autosave
 "
 " Maintainer:    Thomas Lee
-" Modified: 	 2015 Nov 28
 " Requires:      Unix for compiling, everything else should work on Windows
 "                Pathogen  - plugin management
 "                Gundo     - undo tree
@@ -47,7 +46,7 @@ endif
 " Allows bash aliases by specifying config with bash interactive mode ------ {{{
 if has("unix")
     set shellcmdflag+=i
-    set shell=/bin/bash\ --rcfile\ ~/.bash_profile
+    set shell=/bin/bash\ --rcfile\ ~/.bash_aliases
 endif " }}}
 " Backups - Disable persistent swap files ---------------------------------- {{{
 set nobackup     "Don't keep persistent backup (prevent filename~ clutter)
@@ -253,6 +252,10 @@ command! CDC lcd %:p:h
 "Fix any broken folded sections using 'zx' whenever we write to file (may
 "close other folds)
 au FileType vim cnoreabbrev w w<bar>normal zx
+
+
+"Abbreviate finding files containing a given string
+cabbrev ffc new<bar>r!ffc 
 
 "Save with Ctrl-Space
 inoremap <NUL> <Esc>:update<CR>
