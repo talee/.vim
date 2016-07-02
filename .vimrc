@@ -483,6 +483,7 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "}}\"",
 " let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_go_checkers = ['go']
+let g:syntastic_json_checkers = ['jsonlint']
 " Don't check on wq
 let g:syntastic_check_on_wq = 0
 " let g:syntastic_javascript_eslint_args = '--no-eslintrc -c ~/.eslintrc'
