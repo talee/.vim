@@ -34,6 +34,8 @@ set virtualedit=all  "Allow cursor to go anywhere in the window, even if no
 set backspace=indent,eol,start
 set runtimepath+=~/.vim  "Set path for custom user plugins, colors, syntax etc.
 filetype plugin on
+filetype plugin indent on
+syntax on
 set modelines=5  " Default number of modelines
 set switchbuf=useopen " Jump to open buffer window instead of splitting on :sb
 
@@ -128,6 +130,8 @@ set guioptions-=m  "Removes GUI tabs, uses flat tabs instead
 au FileType vim setlocal foldmethod=marker
 "set foldlevelstart=0   "Set initial depth of folded lines, zero == start folded
 set foldmethod=syntax  "Use syntax files to determing which blocks to fold
+"Default no folding at load
+set nofen
 "au FileType html,xml setlocal foldmethod=indent  " Use indents for tag based files
 " Line folding utilities - stevelosh.com ---------------------------------- {{{
 
@@ -209,7 +213,8 @@ set fillchars=vert:│
 " Don't antialias fonts in GUI Vim. Prevents blurry fonts on Mac
 if has ("gui_running") && has("mac")
 	set noantialias
-	set guifont=Monaco:h10
+	"set guifont=Monaco:h10
+	set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h15
 	set transparency=10
 endif
 
@@ -498,9 +503,8 @@ call pathogen#infect()  "http://www.vim.org/scripts/script.php?script_id=2332
 let g:mustache_abbreviations = 1
 " }}}
 " GO plugins -------------------------------------------------------------- {{{
-set rtp+=$GOROOT/misc/vim
-filetype plugin indent on
-syntax on
+"Old golang pre 1.4
+"set rtp+=$GOROOT/misc/vim
 " }}}
 " JavaImp ----------------------------------------------------------------- {{{
 " TODO: https://github.com/rustushki/JavaImp.vim#importing-your-jdk-classes

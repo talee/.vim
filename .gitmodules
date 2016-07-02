@@ -61,3 +61,9 @@
 [submodule "bundle/Tabmerge"]
 	path = bundle/Tabmerge
 	url = git@github.com:vim-scripts/Tabmerge.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = git@github.com:fatih/vim-go.git
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
+	url = git@github.com:mattn/emmet-vim.git
