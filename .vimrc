@@ -482,6 +482,7 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "}}\"",
 " Use JSHint instead of JSLint
 " let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_go_checkers = ['go']
 " Don't check on wq
 let g:syntastic_check_on_wq = 0
 " let g:syntastic_javascript_eslint_args = '--no-eslintrc -c ~/.eslintrc'
@@ -504,10 +505,6 @@ call pathogen#infect()  "http://www.vim.org/scripts/script.php?script_id=2332
 " }}}
 " MUSTACHE HANDLEBARS - syntax highlighting and abbrev -------------------- {{{
 let g:mustache_abbreviations = 1
-" }}}
-" GO plugins -------------------------------------------------------------- {{{
-"Old golang pre 1.4
-"set rtp+=$GOROOT/misc/vim
 " }}}
 " JavaImp ----------------------------------------------------------------- {{{
 " TODO: https://github.com/rustushki/JavaImp.vim#importing-your-jdk-classes
