@@ -513,9 +513,9 @@ let g:JavaImpPaths = $HOME . "/.vim/bundle/java-imp/jmplst"
 let g:JavaImpDataDir = $HOME. "/.vim/bundle/java-imp"
 " }}}
 " EMMET-VIM --------------------------------------------------------------- {{{
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,jsx,js EmmetInstall
+autocmd FileType html,css,jsx,javascript EmmetInstall | imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 "}}}
 " MISC - list/URLs of plugins - some are not called directly by this vimrc  {{{
 "-------------------------------------------------------------------------------
