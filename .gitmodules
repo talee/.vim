@@ -15,7 +15,7 @@
 	url = git@github.com:jiangmiao/auto-pairs.git
 [submodule "bundle/colorizer"]
 	path = bundle/colorizer
-	url = git@github.com:lilydjwg/colorizer
+	url = git@github.com:lilydjwg/colorizer.git
 [submodule "bundle/colorsupport.vim"]
 	path = bundle/colorsupport.vim
 	url = git@github.com:vim-scripts/colorsupport.vim
