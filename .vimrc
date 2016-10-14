@@ -74,7 +74,7 @@ set wrap          "Turns on word wrapping at the end of the window
 set tabstop=4     "Tabs take up 4 spaces on the screen
 set shiftwidth=4  "Number of spaces for indents such as >>, <<
 set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
-au FileType html,htm,css,javascript,json,coffee,php,xhtml setlocal ts=2 sw=2 tw=80 expandtab nofen fdm=expr | vertical resize 80
+au FileType html,htm,css,javascript,json,coffee,php,xhtml,scss,sass setlocal ts=2 sw=2 tw=80 expandtab nofen fdm=expr | vertical resize 80
 au BufRead,BufNewFile .*rc,*.json set ft=json nofen
 au BufRead,BufNewFile *.es6 set ft=javascript nofen
 au BufRead,BufNewFile .bashrc set ft=sh nofen
@@ -111,6 +111,9 @@ set showbreak=↪
 "set comments=s1:/*,mb:*,ex:*/,b:#,:%,:XCOMM,n:>,fb:-
 "set comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
 "}}}
+" Autocomplete hyphen words ------------------------------------------------ {{{
+set iskeyword+=\-
+" }}}
 
 " }}}
 " GUI_OPTIONS ------------------------------------------------------------- {{{
@@ -462,9 +465,10 @@ endif
 " }}}
 " POWERLINE --------------------------------------------------------------- {{{
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"Breaks in Vim 8?
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 " }}}
 " SYNTASTIC - Realtime syntax checking  ----------------------------------- {{{
 "Add line # and number of errors in status line for Syntastic plugin
@@ -727,6 +731,9 @@ function! FormatCurlFile()
 	%s/\v' --([a-z-]{2,})/"\r--\1/g
 	%s/\v^(--[a-z-]{2,}) '/\1 "/g
 endfunction "}}}
+function! FormatXml2()
+  %s/></>\r</g
+endfunction
 " Format XML -------------------------------------------------------------- {{{
 function! FormatXml()
 	set syntax=xml
@@ -782,7 +789,7 @@ endfunction
 " }}}
 " Set 4 spaces for window -------------------------------------------------- {{{
 function! FourSpaces()
-  set ts=4 sw=4
+  setlocal ts=4 sw=4
 endfunction
 " }}}
 " }}}
