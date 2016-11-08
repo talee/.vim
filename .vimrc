@@ -74,12 +74,12 @@ set wrap          "Turns on word wrapping at the end of the window
 set tabstop=4     "Tabs take up 4 spaces on the screen
 set shiftwidth=4  "Number of spaces for indents such as >>, <<
 set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
-au FileType html,htm,css,javascript,json,coffee,php,xhtml,scss,sass setlocal ts=2 sw=2 tw=80 expandtab nofen fdm=expr | vertical resize 80
+au FileType html,htm,css,javascript,json,coffee,php,xhtml,scss,sass setlocal ts=4 sw=4 tw=80 expandtab nofen fdm=expr | vertical resize 80
 au BufRead,BufNewFile .*rc,*.json set ft=json nofen
 au BufRead,BufNewFile *.es6 set ft=javascript nofen
 au BufRead,BufNewFile .bashrc set ft=sh nofen
 au BufRead,BufNewFile .vimrc set ft=vim
-au BufRead,BufNewFile *.tag setlocal ft=jsx omnifunc=htmlcomplete#CompleteTags ts=2 sw=2 tw=80 expandtab nofen fdm=expr | vertical resize 80
+au BufRead,BufNewFile *.tag setlocal ft=jsx omnifunc=htmlcomplete#CompleteTags ts=2 sw=2 tw=80 expandtab nofen fdm=expr "| vertical resize 80
 au FileType markdown setlocal tw=80
 au FileType gitcommit setlocal nofen
 
@@ -215,8 +215,8 @@ set fillchars=vert:│
 " Don't antialias fonts in GUI Vim. Prevents blurry fonts on Mac
 if has ("gui_running") && has("mac")
 	set noantialias
-	"set guifont=Monaco:h10
-	set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h15
+	set guifont=Monaco:h10
+	"set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h15
 	set transparency=10
 endif
 
@@ -251,6 +251,7 @@ endfunction
 
 "CDC = change current directory to working directory of current file
 command! CDC lcd %:p:h
+command! Gros lcd `groo`/src
 
 "Fix any broken folded sections using 'zx' whenever we write to file (may
 "close other folds)
@@ -259,10 +260,14 @@ au FileType vim cnoreabbrev w w<bar>normal zx
 
 "Abbreviate finding files containing a given string
 cnoreabbrev ffc new<bar>r!ffc
+cnoreabbrev rr new<bar>r!
+cnoreabbrev Grb new<bar>r!grbnc
 
 "Save with Ctrl-Space
 inoremap <NUL> <Esc>:update<CR>
 noremap <NUL> <Esc>:update<CR>
+
+noremap gf :e! <cfile><CR>
 
 "Spellon/off toggles spelling check --------------------------------------- {{{
 command! Spellon  setlocal spell spelllang=en_us
