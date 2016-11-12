@@ -74,7 +74,7 @@ set wrap          "Turns on word wrapping at the end of the window
 set tabstop=4     "Tabs take up 4 spaces on the screen
 set shiftwidth=4  "Number of spaces for indents such as >>, <<
 set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
-au FileType html,htm,css,javascript,json,coffee,php,xhtml,scss,sass setlocal ts=4 sw=4 tw=80 expandtab nofen fdm=expr | vertical resize 80
+au FileType html,htm,css,javascript,json,coffee,php,xhtml,scss,sass setlocal ts=4 sw=4 tw=80 expandtab nofen fdm=expr "| vertical resize 80
 au BufRead,BufNewFile .*rc,*.json set ft=json nofen
 au BufRead,BufNewFile *.es6 set ft=javascript nofen
 au BufRead,BufNewFile .bashrc set ft=sh nofen
@@ -261,7 +261,7 @@ au FileType vim cnoreabbrev w w<bar>normal zx
 "Abbreviate finding files containing a given string
 cnoreabbrev ffc new<bar>r!ffc
 cnoreabbrev rr new<bar>r!
-cnoreabbrev Grb new<bar>r!grbnc
+cnoreabbrev Grb new<bar>r!grbncc
 
 "Save with Ctrl-Space
 inoremap <NUL> <Esc>:update<CR>
@@ -493,6 +493,7 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "}}\"",
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_go_checkers = ['go']
 let g:syntastic_json_checkers = ['jsonlint']
+let g:syntastic_cpp_compiler_options="-I/usr/local/include/SDL2 -D_THREAD_SAFE -L/usr/local/lib -lSDL2"
 " Don't check on wq
 let g:syntastic_check_on_wq = 0
 " let g:syntastic_javascript_eslint_args = '--no-eslintrc -c ~/.eslintrc'
@@ -507,7 +508,7 @@ nnoremap <F5> :GundoToggle<CR>
 " }}}
 " PATHOGEN - cleaner plugin management - plugins in their own folder  ----- {{{
 let g:pathogen_disabled = []
-if !exists('g:light_startup') || g:light_startup == 1
+if !has('gui_running') && (!exists('g:light_startup') || g:light_startup == 1)
   call add(g:pathogen_disabled, 'syntastic')
   call add(g:pathogen_disabled, 'nerdtree')
 endif
@@ -769,6 +770,12 @@ endfunction "}}}
 " Replace Epoch times with readable times --------------------------------- {{{
 function! FormatEpoch()
 	%s/\(\d\{10}\)/\=strftime('%Y %b %d %X', str2nr(submatch(1)))/g
+endfunction "}}}
+" Format JSON with double quotes ------------------------------------------ {{{
+function! FormatJSON()
+    %s/:\({\)/:\1\r/ge | %s/{"/{\r"/ge | %s/\(:\w\+\)\("\=\),"/\1\2,\r"/ge | %s/\(":"\w\+",\)"/\1\r"/ge | %s/},"/},\r"/ge | %s/","/",\r"/ge | %s/\],"/],\r"/ge | %s/"},/"\r},/ge | %s/}]}/}]\r}/ge | %s/"}$/"\r}/ge | %s/\(\d\+,\)"/\1\r"/ge | %s/\(:\w\+\)}/\1\r}/ge | %s/}}]/}\r}]/ge | %s/}}$/\r}\r}/ge | %s/":/& /ge
+    set ft=json
+    normal gg=G
 endfunction "}}}
 " Diff between current buffer and the file it's loaded from --------------- {{{
 " Convenient command to see the difference between the current buffer and the
