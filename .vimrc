@@ -262,6 +262,7 @@ au FileType vim cnoreabbrev w w<bar>normal zx
 cnoreabbrev ffc new<bar>r!ffc
 cnoreabbrev rr new<bar>r!
 cnoreabbrev Grb new<bar>r!grbncc
+cnoreabbrev vsb vert sb
 
 "Save with Ctrl-Space
 inoremap <NUL> <Esc>:update<CR>
