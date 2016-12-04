@@ -469,6 +469,9 @@ else
 endif
 
 " }}}
+" COLORIZER --------------------------------------------------------------- {{{
+let g:colorizer_startup = 0
+" }}}
 " POWERLINE --------------------------------------------------------------- {{{
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 "Breaks in Vim 8?
