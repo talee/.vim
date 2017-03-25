@@ -781,6 +781,13 @@ function! FormatJSON()
     set ft=json
     normal gg=G
 endfunction "}}}
+" QBO cookies only -------------------------------------------------------- {{{
+function! GetQBOCookies()
+    %s/; /;\r/g
+    %s/\v^((^(qbo|qbn))@!.)*\n//g
+    %s/;\n/; /g
+endfunction
+" }}}
 " Diff between current buffer and the file it's loaded from --------------- {{{
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -806,6 +813,9 @@ endfunction
 " Set 4 spaces for window -------------------------------------------------- {{{
 function! FourSpaces()
   setlocal ts=4 sw=4
+endfunction
+function! TwoSpaces()
+  setlocal ts=2 sw=2
 endfunction
 " }}}
 " }}}
