@@ -252,6 +252,7 @@ endfunction
 "CDC = change current directory to working directory of current file
 command! CDC lcd %:p:h
 command! Gros lcd `groo`/src
+command! -nargs=+ Grbi read !grbnci <args>
 
 "Fix any broken folded sections using 'zx' whenever we write to file (may
 "close other folds)
