@@ -75,12 +75,13 @@ set tabstop=4     "Tabs take up 4 spaces on the screen
 set shiftwidth=4  "Number of spaces for indents such as >>, <<
 set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
 au FileType html,htm,css,javascript,json,coffee,php,xhtml,scss,sass setlocal ts=4 sw=4 tw=80 expandtab nofen fdm=expr "| vertical resize 80
-au FileType yaml setlocal ts=2 sw=2
+au FileType yaml setlocal ts=2 sw=2  tw=80 fo+=t
 au BufRead,BufNewFile .*rc,*.json set ft=json nofen
 au BufRead,BufNewFile *.es6 set ft=javascript nofen
 au BufRead,BufNewFile .bashrc set ft=sh nofen
 au BufRead,BufNewFile .vimrc set ft=vim
 au BufRead,BufNewFile *.tag setlocal ft=jsx omnifunc=htmlcomplete#CompleteTags ts=2 sw=2 tw=80 expandtab nofen fdm=expr "| vertical resize 80
+au BufRead,BufNewFile Jenkinsfile set ft=groovy
 au FileType markdown setlocal tw=80
 au FileType gitcommit setlocal nofen
 
