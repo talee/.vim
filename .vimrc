@@ -74,7 +74,7 @@ set wrap          "Turns on word wrapping at the end of the window
 set tabstop=4     "Tabs take up 4 spaces on the screen
 set shiftwidth=4  "Number of spaces for indents such as >>, <<
 set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
-au FileType html,htm,css,javascript,json,coffee,php,xhtml,scss,sass setlocal ts=4 sw=4 tw=80 expandtab nofen fdm=expr "| vertical resize 80
+au FileType html,htm,css,javascript,json,coffee,php,xhtml,scss,sass,groovy setlocal ts=4 sw=4 tw=80 expandtab nofen fdm=expr "| vertical resize 80
 au FileType yaml setlocal ts=2 sw=2  tw=80 fo+=t
 au BufRead,BufNewFile .*rc,*.json set ft=json nofen
 au BufRead,BufNewFile *.es6 set ft=javascript nofen
@@ -737,12 +737,13 @@ endfunction
 " }}}
 " Format Chrome cURL ------------------------------------------------------ {{{
 function! FormatCurlFile()
-	%s/"/\\"/g
-	%s/^curl '/url "/
-	%s/ -H '/\r-H "/g
-	%s/'$/"/g
-	%s/\v' --([a-z-]{2,})/"\r--\1/g
-	%s/\v^(--[a-z-]{2,}) '/\1 "/g
+    %s/ -H/ \\\r-H/g
+	"%s/"/\\"/g
+	"%s/^curl '/url "/
+	"%s/ -H '/\r-H "/g
+	"%s/'$/"/g
+	"%s/\v' --([a-z-]{2,})/"\r--\1/g
+	"%s/\v^(--[a-z-]{2,}) '/\1 "/g
 endfunction "}}}
 function! FormatXml2()
   %s/></>\r</g
