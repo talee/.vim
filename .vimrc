@@ -76,6 +76,7 @@ set shiftwidth=4  "Number of spaces for indents such as >>, <<
 set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
 au FileType html,htm,css,javascript,json,coffee,php,xhtml,scss,sass,groovy setlocal ts=4 sw=4 tw=80 expandtab nofen fdm=expr "| vertical resize 80
 au FileType yaml setlocal ts=2 sw=2  tw=80 fo+=t
+au FileType jsonnet setlocal et
 au BufRead,BufNewFile .*rc,*.json set ft=json nofen
 au BufRead,BufNewFile *.es6 set ft=javascript nofen
 au BufRead,BufNewFile .bashrc set ft=sh nofen

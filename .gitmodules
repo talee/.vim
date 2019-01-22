@@ -73,3 +73,6 @@
 [submodule "bundle/vim-graphql"]
 	path = bundle/vim-graphql
 	url = git@github.com:jparise/vim-graphql.git
+[submodule "bundle/vim-jsonnet"]
+	path = bundle/vim-jsonnet
+	url = git@github.com:google/vim-jsonnet.git
