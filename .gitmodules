@@ -76,3 +76,6 @@
 [submodule "bundle/vim-jsonnet"]
 	path = bundle/vim-jsonnet
 	url = git@github.com:google/vim-jsonnet.git
+[submodule "bundle/logstash.vim"]
+	path = bundle/logstash.vim
+	url = git@github.com:robbles/logstash.vim.git
