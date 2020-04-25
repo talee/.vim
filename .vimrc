@@ -257,6 +257,9 @@ command! CDC lcd %:p:h
 command! Gros lcd `groo`/src
 command! -nargs=+ Grbi read !grbnci <args>
 
+"Find stuff ending in current file ext
+command! -nargs=+ Vgr execute "lvimgrep <args> src/**/*." . expand('%:e') | lopen
+
 "Fix any broken folded sections using 'zx' whenever we write to file (may
 "close other folds)
 au FileType vim cnoreabbrev w w<bar>normal zx
@@ -310,6 +313,9 @@ au FileType c,cc,cpp nnoremap <F3> :w<CR> :!g++ -Wall % -o ./%<<CR>
 "compiles with debug symbols using  '-g'
 au FileType c,cc,cpp nnoremap <F4> :w<CR> :!g++ -Wall -g % -o ./%< && valgrind --leak-check=full -q ./%<<CR>
 "}}}
+
+" <F2> run shell script
+au FileType sh nnoremap <F2> :w<CR> :!sh %<CR>
 
 "<F2> - Compile Java source directory to build directory and run it ------- {{{
 "Uses the same build directory structure as Netbeans
@@ -783,6 +789,10 @@ endfunction "}}}
 " Format JSON with double quotes ------------------------------------------ {{{
 function! FormatJSON()
     %s/:\({\)/:\1\r/ge | %s/{"/{\r"/ge | %s/\(:\w\+\)\("\=\),"/\1\2,\r"/ge | %s/\(":"\w\+",\)"/\1\r"/ge | %s/},"/},\r"/ge | %s/","/",\r"/ge | %s/\],"/],\r"/ge | %s/"},/"\r},/ge | %s/}]}/}]\r}/ge | %s/"}$/"\r}/ge | %s/\(\d\+,\)"/\1\r"/ge | %s/\(:\w\+\)}/\1\r}/ge | %s/}}]/}\r}]/ge | %s/}}$/\r}\r}/ge | %s/":/& /ge
+    " Clean up
+    %s/}}/}\r}/ge
+    %s/}}/}\r}/ge
+    %s/}}/}\r}/ge
     set ft=json
     normal gg=G
 endfunction "}}}
