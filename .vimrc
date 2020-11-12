@@ -37,7 +37,8 @@ filetype plugin indent on
 syntax on
 set modelines=5  " Default number of modelines
 set switchbuf=useopen " Jump to open buffer window instead of splitting on :sb
-set shell=/usr/local/bin/zsh
+set pythonthreehome=/usr/local/Frameworks/Python.framework/Versions/Current
+set pythonthreedll=/usr/local/Frameworks/Python.framework/Versions/Current/Python
 
 " In many terminal emulators the mouse works just fine, thus enable it. --- {{{
 if has('mouse')
@@ -484,17 +485,16 @@ endif
 let g:colorizer_startup = 0
 " }}}
 " POWERLINE --------------------------------------------------------------- {{{
-set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
-"Breaks in Vim 8?
-"python from powerline.vim import setup as powerline_setup
-"python powerline_setup()
-"python del powerline_setup
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 " }}}
 " SYNTASTIC - Realtime syntax checking  ----------------------------------- {{{
 "Add line # and number of errors in status line for Syntastic plugin
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Don't set these with powerline? https://github.com/vim-syntastic/syntastic/issues/1689
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 "Creates column on lefthand side of window containing marks at lines with errors
 let g:syntastic_enable_signs=1
