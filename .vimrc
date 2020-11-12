@@ -37,6 +37,7 @@ filetype plugin indent on
 syntax on
 set modelines=5  " Default number of modelines
 set switchbuf=useopen " Jump to open buffer window instead of splitting on :sb
+set shell=/usr/local/bin/zsh
 
 " In many terminal emulators the mouse works just fine, thus enable it. --- {{{
 if has('mouse')
@@ -832,6 +833,24 @@ endfunction
 function! TwoSpaces()
   setlocal ts=2 sw=2
 endfunction
+" }}}
+" Grep all buffers --------------------------------------------------------- {{{
+function! BuffersList()
+  let all = range(0, bufnr('$'))
+  let res = []
+  for b in all
+    if buflisted(b)
+      call add(res, bufname(b))
+    endif
+  endfor
+  return res
+endfunction
+
+function! GrepBuffers (expression)
+  exec 'vimgrep/'.a:expression.'/ '.join(BuffersList())
+endfunction
+
+command! -nargs=+ GrepBufs call GrepBuffers(<q-args>)
 " }}}
 " }}}
 " vim:set foldmethod=marker:set foldlevelstart=0:
