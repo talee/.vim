@@ -34,7 +34,6 @@ set backspace=indent,eol,start
 set runtimepath+=~/.vim  "Set path for custom user plugins, colors, syntax etc.
 filetype plugin on
 filetype plugin indent on
-syntax on
 set modelines=5  " Default number of modelines
 set switchbuf=useopen " Jump to open buffer window instead of splitting on :sb
 set pythonthreehome=/usr/local/Frameworks/Python.framework/Versions/Current
@@ -79,7 +78,7 @@ set noexpandtab   "Do NOT replace tab character with spaces set in 'tabstop'
 au FileType html,htm,css,javascript,json,coffee,php,xhtml,scss,sass,groovy setlocal ts=4 sw=4 tw=80 expandtab nofen fdm=expr "| vertical resize 80
 au FileType yaml setlocal ts=2 sw=2  tw=80 fo+=t
 au FileType jsonnet setlocal et
-au BufRead,BufNewFile .*rc,*.json set ft=json nofen
+au BufRead,BufNewFile *.json set ft=json nofen
 au BufRead,BufNewFile *.es6 set ft=javascript nofen
 au BufRead,BufNewFile .bashrc set ft=sh nofen
 au BufRead,BufNewFile .vimrc set ft=vim
@@ -853,4 +852,6 @@ endfunction
 command! -nargs=+ GrepBufs call GrepBuffers(<q-args>)
 " }}}
 " }}}
+" Must be after autocommands https://stackoverflow.com/questions/1291955/very-strange-behavior-with-vim-syntax-and-filetype-detection
+syntax on
 " vim:set foldmethod=marker:set foldlevelstart=0:
