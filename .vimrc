@@ -32,6 +32,7 @@ set virtualedit=all  "Allow cursor to go anywhere in the window, even if no
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 set runtimepath+=~/.vim  "Set path for custom user plugins, colors, syntax etc.
+set linebreak " Break at words boundaries instead of characters
 filetype plugin on
 filetype plugin indent on
 set modelines=5  " Default number of modelines
