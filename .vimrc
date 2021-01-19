@@ -264,7 +264,7 @@ command! -nargs=+ Vgr execute "lvimgrep <args> src/**/*." . expand('%:e') | lope
 
 "Fix any broken folded sections using 'zx' whenever we write to file (may
 "close other folds)
-au FileType vim cnoreabbrev w w<bar>normal zx
+au FileType vim cnoreabbrev <buffer> w w<bar>normal zx
 
 
 "Abbreviate finding files containing a given string
